@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Isole Canarie - Eruzioni Vulcaniche</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isole Canarie Eruzioni Vulcaniche</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url('canarie_civica.jpg');
+      background-image: url('canarie_civica.jpg'); /* Immagine di sfondo */
       background-size: cover;
       background-position: center;
       color: #fff;
+      background-blur: 20px;
     }
 
     h1, h2 {
       text-align: center;
       margin-top: 20px;
-      color: #1e3a8a;
+      color: #1e3a8a; /* Blu scuro */
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1200px; /* Limita la larghezza per evitare che i contenuti siano troppo larghi */
       margin: 30px auto;
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-trasparente nero */
       border-radius: 15px;
     }
 
-    .eruption, .history, .impact {
+    .eruption {
       background-color: rgba(255, 255, 255, 0.9);
       color: #333;
       padding: 20px;
@@ -39,7 +40,18 @@
     }
 
     .eruption h3 {
-      color: #1e3a8a;
+      color: #1e3a8a; /* Blu scuro */
+    }
+
+    .eruption img {
+      width: 45%;
+      margin: 2.5%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .eruption img:hover {
+      transform: scale(1.05);
     }
 
     .images {
@@ -48,32 +60,20 @@
       flex-wrap: wrap;
     }
 
-    .images img {
-      width: 45%;
-      margin: 2.5%;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-
-    .images img:hover {
-      transform: scale(1.05);
-    }
-
     table {
       width: 100%;
       border-collapse: collapse;
       margin: 20px 0;
-      display: none;
+      display: none; /* Tabella nascosta di default */
     }
 
     table, th, td {
-      border: 1px solid #1e3a8a;
+      border: 1px solid #1e3a8a; /* Blu scuro */
     }
 
     th, td {
       padding: 12px;
       text-align: left;
-      font-size: 16px;
     }
 
     th {
@@ -82,7 +82,7 @@
     }
 
     button {
-      background-color: #1e3a8a;
+      background-color: #1e3a8a; /* Blu scuro */
       color: white;
       border: none;
       padding: 15px 30px;
@@ -95,13 +95,16 @@
     }
 
     button:hover {
-      background-color: #1e40af;
+      background-color: #1e40af; /* Blu più intenso */
     }
 
-    p {
-      max-width: 900px;
-      margin: 0 auto 20px;
-      line-height: 1.6;
+    .history, .impact {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
 
     .impact ul {
@@ -118,6 +121,19 @@
       color: #333;
     }
 
+    /* Stretto margine dei paragrafi */
+    p {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+
+    /* Ottimizzazione per il testo dentro la tabella */
+    td, th {
+      font-size: 16px;
+    }
+
+    /* Stile per il video */
     .video-container {
       text-align: center;
       margin-top: 30px;
@@ -137,13 +153,14 @@
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h1 style="color: white;">Cambiamento delle Isole Canarie</h1>
-    <h2 style="color: red;">Eruzioni Vulcaniche</h2>
+    <h1 style = "color:white;">Cambiamento delle Isole Canarie</h1>
+    <h2 style = "color:red;">Eruzioni Vulcaniche</h2>
 
     <div class="history">
       <h2>Storia delle Isole Canarie</h2>
-      <p>Le Isole Canarie sono un arcipelago vulcanico situato nell'Oceano Atlantico, al largo della costa nord-occidentale dell'Africa. La loro origine risale a milioni di anni fa, con il processo geologico di vulcanismo che ha creato le isole. Le eruzioni vulcaniche sono state fondamentali nella formazione del paesaggio attuale.</p>
+      <p>Le Isole Canarie sono un arcipelago vulcanico situato nell'Oceano Atlantico, al largo della costa nord-occidentale dell'Africa. La loro origine risale a milioni di anni fa, con il processo geologico di vulcanismo che ha creato le isole. Gli eruzioni vulcaniche sono state fondamentali nella formazione del paesaggio che vediamo oggi.</p>
     </div>
 
     <button onclick="toggleTable()">Mostra/Storia delle Eruzioni</button>
@@ -158,21 +175,56 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>1730-1736</td><td>Lanzarote</td><td>Timanfaya</td><td>Modificò radicalmente il paesaggio dell'isola, creando la "Zona di Timanfaya".</td></tr>
-        <tr><td>1793</td><td>Lanzarote</td><td>Corona</td><td>Creò nuovi crateri e impattò l'agricoltura locale.</td></tr>
-        <tr><td>1824</td><td>Lanzarote</td><td>La Geria</td><td>Alterò l'aspetto dell'isola, colpendo la viticoltura.</td></tr>
-        <tr><td>1949</td><td>La Palma</td><td>San Juan</td><td>Importante eruzione con formazione di nuove terre.</td></tr>
-        <tr><td>1971</td><td>La Palma</td><td>Teneguía</td><td>Creò nuove terre e nuovi ecosistemi marini.</td></tr>
-        <tr><td>2011</td><td>El Hierro</td><td>Sottomarina</td><td>Eruzione sottomarina con impatti marini.</td></tr>
-        <tr><td>2021</td><td>La Palma</td><td>Cumbre Vieja</td><td>Distrusse infrastrutture e costrinse all'evacuazione migliaia di persone.</td></tr>
+        <tr>
+          <td>1730-1736</td>
+          <td>Lanzarote</td>
+          <td>Timanfaya</td>
+          <td>Una delle eruzioni più lunghe, che ha modificato radicalmente il paesaggio dell'isola. L'attività vulcanica ha creato la famosa "Zona di Timanfaya".</td>
+        </tr>
+        <tr>
+          <td>1793</td>
+          <td>Lanzarote</td>
+          <td>Corona</td>
+          <td>Un'eruzione che ha portato alla formazione di nuovi crateri e cambiamenti significativi nel paesaggio. L'attività vulcanica ha avuto impatti devastanti sull'agricoltura.</td>
+        </tr>
+        <tr>
+          <td>1824</td>
+          <td>Lanzarote</td>
+          <td>La Geria</td>
+          <td>Eruzione che ha alterato l'aspetto dell'isola e ha avuto un impatto sulle attività agricole locali, in particolare la coltivazione di viti.</td>
+        </tr>
+        <tr>
+          <td>1949</td>
+          <td>La Palma</td>
+          <td>San Juan</td>
+          <td>Importante eruzione che ha avuto un impatto significativo sulla geografia dell'isola, con la creazione di nuove terre e crateri.</td>
+        </tr>
+        <tr>
+          <td>1971</td>
+          <td>La Palma</td>
+          <td>Teneguía</td>
+          <td>Eruzione che ha creato nuove terre sulla costa dell'isola, portando anche alla creazione di nuovi ecosistemi marini.</td>
+        </tr>
+        <tr>
+          <td>2011</td>
+          <td>El Hierro</td>
+          <td>Sottomarina</td>
+          <td>Eruzione sottomarina che ha avuto effetti sulle acque circostanti e sulla vita marina, creando nuove formazioni geologiche sottomarine.</td>
+        </tr>
+        <tr>
+          <td>2021</td>
+          <td>La Palma</td>
+          <td>Cumbre Vieja</td>
+          <td>Eruzione significativa che ha portato alla distruzione di molte infrastrutture e cambiamenti profondi nel paesaggio. Ha causato l'evacuazione di migliaia di persone.</td>
+        </tr>
       </tbody>
     </table>
 
     <h3>Eruzioni dal 1971 in poi - Prima e Dopo</h3>
 
     <div class="eruption">
-      <h3>1971 - Teneguía (La Palma)</h3>
-      <p>Creò nuove terre sulla costa dell'isola.</p>
+      <h3>Eruzione del 1971 (La Palma - Teneguía)</h3>
+      <p>Un'eruzione che ha creato nuove terre sulla costa dell'isola.</p>
       <div class="images">
         <img src="default-before.jpg" alt="Prima dell'eruzione 1971">
         <img src="default-after.jpg" alt="Dopo l'eruzione 1971">
@@ -180,8 +232,8 @@
     </div>
 
     <div class="eruption">
-      <h3>2011 - El Hierro</h3>
-      <p>Eruzione sottomarina con impatto sul mare e sugli ecosistemi.</p>
+      <h3>Eruzione del 2011 (El Hierro)</h3>
+      <p>Un'eruzione sottomarina che ha avuto un impatto sul mare e sulla vita marina.</p>
       <div class="images">
         <img src="default-before.jpg" alt="Prima dell'eruzione 2011">
         <img src="default-after.jpg" alt="Dopo l'eruzione 2011">
@@ -189,8 +241,8 @@
     </div>
 
     <div class="eruption">
-      <h3>2021 - Cumbre Vieja (La Palma)</h3>
-      <p>Impatti significativi su infrastrutture e ambiente.</p>
+      <h3>Eruzione del 2021 (La Palma - Cumbre Vieja)</h3>
+      <p>Una delle eruzioni più recenti, con impatti significativi sulle infrastrutture e sull'ambiente di La Palma.</p>
       <div class="images">
         <img src="default-before.jpg" alt="Prima dell'eruzione 2021">
         <img src="default-after.jpg" alt="Dopo l'eruzione 2021">
@@ -200,24 +252,38 @@
     <div class="impact">
       <h2>Impatto delle Eruzioni Vulcaniche</h2>
       <ul>
-        <li><strong>Distruzione di abitazioni e infrastrutture:</strong> Eruzioni come quella del 2021 hanno causato gravi danni.</li>
-        <li><strong>Evacuazioni di massa:</strong> Migliaia di persone hanno lasciato le loro case.</li>
-        <li><strong>Inquinamento atmosferico:</strong> Emissione di gas nocivi per la salute e l'ambiente.</li>
-        <li><strong>Impatto sull'agricoltura:</strong> Le colate laviche hanno reso sterili ampie zone coltivate.</li>
+        <li><strong>Distruzione di abitazioni e infrastrutture:</strong> Le eruzioni, come quella di Cumbre Vieja nel 2021, hanno distrutto case e altre strutture vitali.</li>
+        <li><strong>Evacuazioni di massa:</strong> Migliaia di persone sono state costrette a lasciare le loro case a causa della minaccia di lava e ceneri.</li>
+        <li><strong>Inquinamento atmosferico:</strong> Le eruzioni emettono gas pericolosi che influenzano la salute umana e l'ambiente.</li>
+        <li><strong>Impatto sull'agricoltura:</strong> Le terre agricole sono state sepolte, causando gravi perdite per l'economia locale.</li>
       </ul>
     </div>
+	
+   <!-- Video -->
+	<div style="display: flex; justify-content: center; margin-top: 30px;">
+	  <iframe 
+		width="560" 
+		height="315"
+		src="https://www.youtube.com/embed/SUMX8ZJqt0A"
+		title="YouTube video player"
+		frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		allowfullscreen
+		style="border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+	  </iframe>
+	</div>
 
-    <div class="video-container">
-      <h2>Guarda il video</h2>
-      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
-    </div>
-  </div>
 
   <script>
     function toggleTable() {
       const table = document.getElementById('eruptionHistory');
-      table.style.display = table.style.display === 'none' || table.style.display === '' ? 'table' : 'none';
+      if (table.style.display === 'none' || table.style.display === '') {
+        table.style.display = 'table';
+      } else {
+        table.style.display = 'none';
+      }
     }
   </script>
+
 </body>
 </html>
