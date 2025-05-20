@@ -96,19 +96,19 @@ th {
   color: white;
 }
 
-.images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
 .images img {
   width: 100%;
   max-width: 700px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
 
 iframe {
   width: 100%;
